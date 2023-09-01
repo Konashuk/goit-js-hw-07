@@ -31,10 +31,18 @@ function openMadalWindow(event) {
   if (event.currentTarget === event.target) {
     return;
   }
+  function pressEsc(ev) {
+    if (ev.key === "Escape") {
+      instance.close();
+      window.removeEventListener("keydown", pressEsc);
+    }
+  }
+
   const instance = basicLightbox.create(`
     <img src="${originalImg}" width="800" height="600" alt="${descriptionImg}">
 `);
   console.log(`You open: ${descriptionImg}`);
+  window.addEventListener("keydown", pressEsc);
 
   instance.show();
 }

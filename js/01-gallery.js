@@ -32,7 +32,7 @@ function openMadalWindow(event) {
     return;
   }
   const instance = basicLightbox.create(`
-    <img src="${originalImg}" width="800" height="600">
+    <img src="${originalImg}" width="800" height="600" alt="${descriptionImg}">
 `);
   console.log(`You open: ${descriptionImg}`);
 
